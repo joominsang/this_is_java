@@ -21,5 +21,11 @@ public class Main {
 
         StringType st = new StringType();
         st.useString();
+
+        PromotionExample pe = new PromotionExample();
+        pe.usePromotion();
+
+        CastingExample ce = new CastingExample();
+        ce.useCasting();
     }
 }
