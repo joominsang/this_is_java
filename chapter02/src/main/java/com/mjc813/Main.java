@@ -27,5 +27,8 @@ public class Main {
 
         CastingExample ce = new CastingExample();
         ce.useCasting();
+
+        TranslateType tt = new TranslateType();
+        tt.useTranslate();
     }
 }
