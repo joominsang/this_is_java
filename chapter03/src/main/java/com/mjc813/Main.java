@@ -63,23 +63,5 @@ public class Main {
 
         chapter03 cat19 = new chapter03();
         cat12.Third18();
-
-        chapter03 cat20 = new chapter03();
-        cat20.Third19();
-
-        chapter03 cat21 = new chapter03();
-        cat21.Third20();
-
-        chapter03 cat22 = new chapter03();
-        cat22.Third21();
-
-        chapter03 cat23= new chapter03();
-        cat23.Third22();
-
-        chapter03 cat24 = new chapter03();
-        cat24.Third23();
-
-        chapter03 cat25 = new chapter03();
-        cat25.Third24();
     }
 }
