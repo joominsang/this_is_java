@@ -37,5 +37,23 @@ public class Main {
 
         chapter05 c11 = new chapter05();
         c11.chp11();
+
+        chapter05 c12 = new chapter05();
+        c12.chp12();
+
+        chapter05 c13 = new chapter05();
+        c13.chp13();
+
+        chapter05 c14 = new chapter05();
+        c14.chp14();
+
+        chapter05 c15 = new chapter05();
+        c15.chp15();
+
+        chapter05 c16 = new chapter05();
+        c16.chp16();
+
+        chapter05 c17 = new chapter05();
+        c17.chp17();
     }
 }

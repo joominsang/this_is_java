@@ -138,4 +138,200 @@ public class chapter05 {
             System.out.println(tokens[i]);
         }
     }
+    public void chp12() {
+        String[] season = {"spring", "summer", "fall", "winter"};
+
+        System.out.println("season[0] : " + season[0]);
+        System.out.println("season[1] : " + season[1]);
+        System.out.println("season[2] : " + season[2]);
+        System.out.println("season[3] : " + season[3]);
+
+        season[1] = "여름";
+        System.out.println("season[1] : " + season[1]);
+        System.out.println();
+
+        int[] scores = {83, 90, 87};
+
+        int sum = 0;
+        for(int i=0; i<3; i++) {
+            sum += scores[i];
+        }
+        System.out.println("총합 : " + sum);
+        double avg = (double) sum/3;
+        System.out.println("평균 : " + avg);
+    }
+    public void chp13() {
+        int[] scores;
+        scores = new int[] {83, 90, 87};
+
+        int sum1 = 0;
+        for(int i = 0; i < 3; i++) {
+            sum1 += scores[i];
+        }
+        System.out.println("총합 : " + sum1);
+
+        printItem(new int[] {83, 90, 87});
+    }
+    public static void printItem(int[] scores) {
+        for(int i = 0; i < 3; i++) {
+            System.out.println("score["+ i +"]: " + scores[i]);
+        }
+    }
+    public void chp14() {
+        int[] arr1 = new int[3];
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr1["+ i +"] : " + arr1[i] + ", ");
+        }
+        System.out.println();
+
+        arr1[0] = 10;
+        arr1[1] = 20;
+        arr1[2] = 30;
+
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr1["+ i +"] : " + arr1[i] + ", ");
+        }
+        System.out.println("\n");
+
+        double[] arr2 = new double[3];
+
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr2["+ i +"] : " + arr2[i] + ", ");
+        }
+        System.out.println();
+
+        arr2[0] = 0.1;
+        arr2[1] = 0.2;
+        arr2[2] = 0.3;
+
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr2["+ i +"] : " + arr2[i] + ", ");
+        }
+        System.out.println("\n");
+
+        String[] arr3 = new String[3];
+
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr3["+ i +"] : " + arr3[i] + ", ");
+        }
+        System.out.println();
+
+        arr3[0] = "1월";
+        arr3[1] = "2월";
+        arr3[2] = "3월";
+
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr3["+ i +"] : " + arr3[i] + ", ");
+        }
+    }
+    public void chp15() {
+        int[] scores = {84, 90, 96};
+
+        int sum = 0;
+        for(int i = 0; i < scores.length; i++) {
+            sum += scores[i];
+        }
+        System.out.println("총합 : " + sum);
+
+        double avg = (double) sum / scores.length;
+        System.out.println("평균 : " + avg);
+    }
+    public void chp16() {
+        int[][] scores = {
+                {80, 90, 96},
+                {76, 88}
+        };
+        System.out.println("1차원 배열 길이(반의 수): " + scores.length);
+        System.out.println("1차원 배열 길이(첫 번째 반의 학생 수): " + scores[0].length);
+        System.out.println("1차원 배열 길이(두 번째 반의 학생 수): " + scores[1].length);
+
+        System.out.println("scores[0][2]: " + scores[0][2]);
+
+        System.out.println("scores[1][1]: " + scores[1][1]);
+
+        int class1Sum = 0;
+        for(int i = 0; i < scores[0].length; i++) {
+            class1Sum += scores[0][i];
+        }
+        double class1Avg = (double) class1Sum / scores[0].length;
+        System.out.println("첫 번째 반의 평균 점수: " + class1Avg);
+
+        int class2Sum = 0;
+        for(int i = 0; i < scores[1].length; i++) {
+            class2Sum += scores[1][i];
+        }
+        double class2Avg = (double) class2Sum / scores[1].length;
+        System.out.println("두 번째 반의 평균 점수: " + class2Avg);
+
+        int totalStudent = 0;
+        int totalSum = 0;
+        for(int i = 0; i < scores.length; i++) {
+            totalStudent += scores[i].length;
+            for(int k = 0; k < scores[i].length; k++) {
+                totalSum += scores[i][k];
+            }
+        }
+        double totalAvg = (double) totalSum / totalStudent;
+        System.out.println("전체 학생의 평균 점수: " + totalAvg);
+    }
+    public void chp17() {
+        int[][] mathScores = new int[2][3];
+
+        for(int i = 0; i < mathScores.length; i++) {
+            for(int k = 0; k < mathScores[i].length; k++) {
+
+                System.out.println("mathScores[" + i +"][" + k +"]: " + mathScores[i][k]);
+            }
+        }
+        System.out.println();
+
+        mathScores[0][0] = 80;
+        mathScores[0][1] = 83;
+        mathScores[0][2] = 85;
+        mathScores[1][0] = 86;
+        mathScores[1][1] = 90;
+        mathScores[1][2] = 92;
+
+        int totalStudent = 0;
+        int totalMathSum = 0;
+        for(int i = 0; i < mathScores.length; i++) {
+            totalStudent += mathScores[i].length;
+            for(int k = 0; k < mathScores[i].length; k++) {
+
+                totalMathSum += mathScores[i][k];
+            }
+        }
+        double totalMathAvg = (double) totalMathSum / totalStudent;
+        System.out.println("전체 학생의 수학 평균 점수: " + totalMathAvg);
+        System.out.println();
+
+        int[][] englishScores = new int[2][];
+        englishScores[0] = new int[2];
+        englishScores[1] = new int[3];
+
+        for(int i = 0; i < englishScores.length; i++) {
+            for(int k = 0; k < englishScores[i].length; k++) {
+
+                System.out.println("englishScores[" + i +"][" + k + "]: " + englishScores[i][k]);
+            }
+        }
+        System.out.println();
+        englishScores[0][0] = 90;
+        englishScores[0][1] = 91;
+        englishScores[1][0] = 92;
+        englishScores[1][1] = 93;
+        englishScores[1][2] = 94;
+
+        totalStudent = 0;
+        int totalEnglishSum = 0;
+        for(int i = 0; i <englishScores.length; i++) {
+            totalStudent += englishScores[i].length;
+            for(int k = 0; k < englishScores[i].length; k++) {
+
+                totalEnglishSum += englishScores[i][k];
+            }
+        }
+        double totalEnglishAvg = (double) totalEnglishSum / totalStudent;
+        System.out.println("전체 학생의 영어 평균 점수: " + totalEnglishAvg);
+    }
 }
