@@ -55,5 +55,41 @@ public class Main {
 
         chapter05 c17 = new chapter05();
         c17.chp17();
+
+        chapter05 c18 = new chapter05();
+        c18.runarray();
+
+        chapter05 c19 = new chapter05();
+        c19.acmicpcNet_problem_10818();
+
+        chapter05 c20 = new chapter05();
+        c20.chp18();
+
+        chapter05 c21 = new chapter05();
+        c21.chp19();
+
+        chapter05 c22 = new chapter05();
+        c22.chp20();
+
+        chapter05 c23 = new chapter05();
+        c23.chp21();
+
+        chapter05 c24 = new chapter05();
+        c24.chp22();
+
+        chapter05 c25 = new chapter05();
+        c25.chp23();
+
+        chapter05 c26 = new chapter05();
+        c26.chp24();
+
+        chapter05 c27 = new chapter05();
+        c27.chp25();
+
+        chapter05 c28 = new chapter05();
+        c28.chp26();
+
+        chapter05 c29 = new chapter05();
+        c29.chp27();
     }
 }
