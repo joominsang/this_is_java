@@ -3,6 +3,8 @@ package com.mjc813;
 import com.sun.jdi.IntegerValue;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class chapter05 {
@@ -372,28 +374,29 @@ public class chapter05 {
             System.out.println();
         }
     }
+
     public void acmicpcNet_problem_10818() {
         int[] count = this.getIntArrayFromScanner("처리할 갯수를 입력", 1);
-        if ( count == null || count.length <= 0 || count[0] == 0 ) {
+        if (count == null || count.length <= 0 || count[0] == 0) {
             return;
         }
 
         int[] intArray = this.getIntArrayFromScanner("3 -1 5..., 이런식으로 공백으로 숫자를 띄워서 입력", count[0]);
-        if ( intArray == null || intArray.length <= 0 ) {
+        if (intArray == null || intArray.length <= 0) {
             return;
         }
         int[] resArray = this.findMinMax(intArray);
         System.out.printf("acmicpcNet_problem_10818 = %d, %d\n", resArray[0], resArray[1]);
     }
 
-    private int[] findMinMax( int[] intArray ) {
+    private int[] findMinMax(int[] intArray) {
         int[] arrResult = {Integer.MAX_VALUE, Integer.MIN_VALUE};
-        for ( int number : intArray ) {
-            if ( number < arrResult[0] ) {
+        for (int number : intArray) {
+            if (number < arrResult[0]) {
                 // 최솟값 구하기
                 arrResult[0] = number;
             }
-            if ( arrResult[1] < number ) {
+            if (arrResult[1] < number) {
                 // 최댓값 구하기
                 arrResult[1] = number;
             }
@@ -410,7 +413,7 @@ public class chapter05 {
         String sInput = scanner.nextLine();
         try {
             String[] arrItem = sInput.split(" ");
-            for ( int i = 0, j = 0; i < nResult.length && j < arrItem.length; i++, j++ ) {
+            for (int i = 0, j = 0; i < nResult.length && j < arrItem.length; i++, j++) {
                 nResult[i] = Integer.parseInt(arrItem[j]);
             }
             int j = 0;  // 예외가 발생하면 다음 문장을 실행 안하고 catch 블록으로 이동한다.
@@ -424,6 +427,7 @@ public class chapter05 {
         // 키보드 입력으로 정수형 문자열 입력받아서 정수로 변환하고 리턴
         return nResult;
     }
+
     //1번 : 10개의 boolean 값이 원소인 1차원 배열의 짝수번째 인덱스가 true 이고 다른 인덱스는 false 로 만들어서 출력하세요
     //입력 =>
     //boolean[] boolArray = new boolean[10];
@@ -433,60 +437,64 @@ public class chapter05 {
     public void chp18() {
         Scanner s = new Scanner(System.in);
         boolean[] boolArray = new boolean[10];
-        for(int i = 0; i < 10; i++) {
-            if(i % 2 == 0) {
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 == 0) {
                 boolArray[i] = true;
-            }
-            else {
+            } else {
                 boolArray[i] = false;
             }
         }
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             System.out.print(boolArray[i]);
-            if(i < boolArray.length-1) {
+            if (i < boolArray.length - 1) {
                 System.out.print(", ");
             }
         }
     }
+
     // 1-1 : 30개의 int형 배열을 선언하고 모든 원소의 값을 인덱스 번호로 대입하세요.
     public void chp19() {
-        int[] intArray= new int[30];
-        for(int i = 0; i < intArray.length; i++) {
+        int[] intArray = new int[30];
+        for (int i = 0; i < intArray.length; i++) {
             intArray[i] = i;
             System.out.println(intArray[i]);
         }
     }
+
     // 1-2 : char형 1차원 배열을 선언하고 길이는 20개 입니다.
     public void chp20() {
         char[] charArray = new char[20];
     }
+
     // 1-3 : boolean형 2차원 배열을 3행 4열 만들고 값을 true로 모두 설정하세요.
     public void chp21() {
         boolean[][] boolArray = new boolean[3][4];
-        for(int i = 0; i < boolArray.length; i++) {
-            for(int j = 0; j < boolArray[i].length; j++) {
+        for (int i = 0; i < boolArray.length; i++) {
+            for (int j = 0; j < boolArray[i].length; j++) {
                 boolArray[i][j] = true;
             }
         }
     }
+
     // 1-4 : String 형 1차원 배열을 선언하고 길이는 50개 입니다. 모든 원소를 "empty" 로 설정하세요.
     public void chp22() {
         String[] strArray = new String[50];
-        for(int i = 0; i < strArray.length; i++) {
+        for (int i = 0; i < strArray.length; i++) {
             strArray[i] = "empty";
         }
     }
+
     //2번 : 0,1 로 이루어진 2차원 직사각형 배열이 있습니다. 0의 갯수와 1의 갯수를 출력하세요
     //입력 =>
     //int[][] intDemention2 = {
-            //{0, 0, 1, 1, 0, 0}, {1, 0, 0, 1, 0, 0}
-            //, {0, 1, 0, 1, 0, 0}, {0, 0, 1, 1, 0, 1}
-            //, {1, 0, 0, 0, 1, 0}
+    //{0, 0, 1, 1, 0, 0}, {1, 0, 0, 1, 0, 0}
+    //, {0, 1, 0, 1, 0, 0}, {0, 0, 1, 1, 0, 1}
+    //, {1, 0, 0, 0, 1, 0}
     //};
     //처리 => 반복문을 사용하세요
     //한줄에 출력 =>
     //0의 갯수는 ?개, 1의 갯수는 ?개.
-     public void chp23() {
+    public void chp23() {
         int sum0 = 0;
         int sum1 = 0;
         int[][] intDemention2 = {
@@ -494,18 +502,18 @@ public class chapter05 {
                 , {0, 1, 0, 1, 0, 0}, {0, 0, 1, 1, 0, 1}
                 , {1, 0, 0, 0, 1, 0}
         };
-        for(int i = 0; i < intDemention2.length; i++) {
-            for(int j = 0; j < intDemention2[i].length; j++){
-                if(intDemention2[i][j] == 0) {
-                    sum0 ++;
-                }
-                else if(intDemention2[i][j] == 1) {
-                    sum1 ++;
+        for (int i = 0; i < intDemention2.length; i++) {
+            for (int j = 0; j < intDemention2[i].length; j++) {
+                if (intDemention2[i][j] == 0) {
+                    sum0++;
+                } else if (intDemention2[i][j] == 1) {
+                    sum1++;
                 }
             }
         }
-         System.out.println("0의 개수는? " + sum0 + " 1의 개수는? " + sum1 );
+        System.out.println("0의 개수는? " + sum0 + " 1의 개수는? " + sum1);
     }
+
     //3번 : 입력이 아래와 같을때 출력을 아래와 같이 만드세요
     //입력 =>
     //char[][] chInput = {
@@ -513,17 +521,17 @@ public class chapter05 {
     //        {'*', '*', ' ', ' ', ' '},
     //        {'*', ' ', '*', '*', '*'}
     //};
-	//****
+    //****
     //        **
     //        * ***
     //처리 => 반복문 사용하세요
     //출력 배열 =>
     //char[][] chOutput = {
-            //{'*', '*', '*'},
-            //{'*', '*', ' '},
-            //{'*', ' ', '*'},
-            //{'*', ' ', '*'},
-            //{' ', ' ', '*'},
+    //{'*', '*', '*'},
+    //{'*', '*', ' '},
+    //{'*', ' ', '*'},
+    //{'*', ' ', '*'},
+    //{' ', ' ', '*'},
     //};
     //***
     //        **
@@ -537,8 +545,8 @@ public class chapter05 {
                 {'*', ' ', '*', '*', '*'}
         };
         char[][] chOutput = new char[chInput[0].length][chInput.length];
-        for(int i = 0; i < chInput.length; i++) {
-            for(int k = 0; k < chInput[i].length; k++) {
+        for (int i = 0; i < chInput.length; i++) {
+            for (int k = 0; k < chInput[i].length; k++) {
                 chOutput[k][i] = chInput[i][k];
             }
         }
@@ -549,45 +557,253 @@ public class chapter05 {
             System.out.println();
         }
     }
-    public void chp25() {
+
+    public double[] chp25() {
         double[] dArray = new double[25];
-        for(int i = 0; i < dArray.length; i++) {
-            dArray[i] = Math.random() * 100;;
+        for (int i = 0; i < dArray.length; i++) {
+            dArray[i] = Math.random() * 100;
+            System.out.println("배열의 값: " + dArray[i]);
         }
-        for(int i = 0; i < dArray.length; i++) {
-            System.out.println(dArray[i]);
-        }
+        return dArray;
     }
-    public void chp26() {
+
+    public int[] chp26(double[] dArray) {
         int sum = 0;
-        int avg = 0;
         int[] nArray = new int[25];
-        double[] dArray = new double[nArray.length];
-        for(int i = 0; i < nArray.length; i++) {
+        for (int i = 0; i < nArray.length; i++) {
             nArray[i] = (int) dArray[i];
             sum += nArray[i];
         }
-        avg = sum / nArray.length;
+        System.out.println("총합: " + sum);
+
+        double average = (double) sum / nArray.length;
+        System.out.println("평균: " + average);
+        return nArray;
     }
-    public void chp27() {
-        double[] dArray = new double[25];
-        int[] nArray = new int[25];
+
+    public void chp27(double[] dArray, int[] nArray) {
         String[] strArray = new String[25];
         for (int i = 0; i < strArray.length; i++) {
-            dArray[i] = strArray[i].length();
-            nArray[i] = (int) dArray[i];
+            strArray[i] = dArray[i] + " => " + nArray[i];
         }
         for (int i = 0; i < strArray.length; i++) {
-            System.out.println(dArray[i] + "=>" + nArray[i]);
+            System.out.println(strArray[i]);
+        }
+        int[] arr1 = new int[30];
+        for (int i = 0; i < 30; i++) {
+            arr1[i] = i;
+        }
+        System.out.print("arr1: " + Arrays.toString(strArray));
+        System.out.print("\n");
+    }
+    public void chp29(int n) {
+//		int n = 7; // 반드시 홀수여야 예쁘게 나옵니다.
+            if (n % 2 == 0) {
+                n++;
+            }
+            int mid = n / 2;
+
+            int space = mid; // 시작 줄의 공백 개수 (2개)
+            int star = 1;    // 시작 줄의 별 개수 (1개)
+
+            char[][] chDiamond1 = new char[n][n];
+            char[][] chDiamond2 = new char[n][n];
+            for (int i = 0; i < chDiamond1.length; i++) {
+                // 1. 공백 출력
+                for (int j = 0; j < space; j++) {
+                    System.out.print(" ");
+                    chDiamond1[i][j] = ' ';
+                }
+                // 2. 별 출력
+                for (int j = 0; j < star; j++) {
+                    System.out.print("*");
+                    chDiamond1[i][j] = '*';
+                }
+                for (int col = 0; col < chDiamond2[i].length; col++) {
+                    chDiamond2[i][col] = (Math.abs(mid - i) + Math.abs(mid - col) <= mid) ? '*' : ' ';
+                }
+                System.out.println(); // 줄바꿈
+
+                // 3. 변수 조절 (중앙 이전까지는 별 늘리고, 이후엔 줄이기)
+                if (i < mid) {
+                    space -= 1; // 공백은 1개씩 감소
+                    star += 2;  // 별은 2개씩 증가
+                } else {
+                    space += 1; // 공백은 1개씩 증가
+                    star -= 2;  // 별은 2개씩 감소
+                }
+            }
+
+            for (char[] chArr1 : chDiamond1) {
+                for (char ch : chArr1) {
+                    System.out.printf("%s", ch);
+                }
+                System.out.println();
+            }
+
+            for (char[] chArr1 : chDiamond2) {
+                for (char ch : chArr1) {
+                    System.out.printf("%s", ch);
+                }
+                System.out.println();
         }
     }
-    public void chp28() {
-        char[][] chDiamond = new char[5][5];
-        char[][] chOutDiamond = new char[chDiamond[0].length][chDiamond.length];
-        for(int i = 0; i < chDiamond.length; i++) {
-            for(int k = 0; k < chDiamond[i].length; k++) {
+    public void chp30() {
+        String[] strArray = new String[3];
+        strArray[0] = "Java";
+        strArray[1] = "Java";
+        strArray[2] = new String("Java");
 
+        System.out.println(strArray[0] == strArray[1]);
+        System.out.println(strArray[0] == strArray[2]);
+        System.out.println(strArray[0].equals(strArray[2]));
+    }
+    public void chp31() {
+        int[] oldIntArray = {1, 2, 3};
+
+        int[] newIntArray = new int[5];
+
+        for(int i = 0; i < oldIntArray.length; i++) {
+            newIntArray[i] = oldIntArray[i];
+        }
+        for(int i = 0; i < newIntArray.length; i++) {
+            System.out.print(newIntArray[i] + ", ");
+        }
+    }
+    public void chp32() {
+        String[] oldStrArray = {"Java", "Array", "copy"};
+
+        String[] newStrArray = new String[5];
+
+        System.arraycopy(oldStrArray, 0, newStrArray, 0, oldStrArray.length);
+
+        for(int i = 0; i < newStrArray.length; i++) {
+            System.out.print(newStrArray[i] + ", ");
+        }
+    }
+    public void chp33() {
+        int[] scores = {95, 71, 84, 93, 87};
+
+        int sum = 0;
+        for(int score: scores) {
+            sum = sum + score;
+        }
+        System.out.println("점수 총합 = " + sum);
+
+        double avg = (double) sum / scores.length;
+        System.out.println("점수 평균 = " + avg);
+    }
+    public void chp34(String[] args) {
+            if (args.length != 2) {
+                System.out.println("프로그램 입력값이 부족");
+                System.exit(0);
+            }
+            String strNum1 = args[0];
+            String strNum2 = args[1];
+
+            int num1 = Integer.parseInt(strNum1);
+            int num2 = Integer.parseInt(strNum2);
+
+            int result = num1 + num2;
+            System.out.println(num1 + " + " + num2 + " = " + result);
+    }
+    public void chp35() {
+        Week today = null;
+
+        Calendar cal = Calendar.getInstance();
+
+        int week = cal.get(Calendar.DAY_OF_WEEK);
+
+        switch(week) {
+            case 1: today = Week.SUNDAY; break;
+            case 2: today = Week.MONDAY; break;
+            case 3: today = Week.TUESDAY; break;
+            case 4: today = Week.WEDNESDAY; break;
+            case 5: today = Week.THURSDAY; break;
+            case 6: today = Week.FRIDAY; break;
+            case 7: today = Week.SATURDAY; break;
+        }
+
+        if(today == Week.SUNDAY) {
+            System.out.println("일요일에는 축구를 합니다.");
+        } else {
+            System.out.println("열심히 자바를 공부합니다.");
+        }
+    }
+    public void chp36() {
+        int[] array = {1, 5, 3, 8, 2};
+        int max = array[0];
+        for(int i = 0; i < array.length; i++) {
+            if(i > max) {
+                max = array[i];
             }
         }
+        System.out.println("최대값은: " + max);
+    }
+    public void chp37() {
+        int sum = 0;
+        int count = 0;
+        int[][] array = {
+                {95, 86},
+                {83, 92, 96},
+                {78, 83, 93, 87, 88}
+        };
+        for(int i = 0; i < array.length; i++) {
+            for(int j = 0; j < array[i].length; j++){
+                sum += array[i][j];
+                count++;
+            }
+        }
+        double avg = (double) sum / count;
+
+        System.out.println("전체 합: " + sum);
+        System.out.println("평균: " + avg);
+    }
+    public void chp38() {
+        Scanner s = new Scanner(System.in);
+        boolean student  = true;
+        int count = 2;
+        int[] scores = null;
+        int max = scores[0];
+        int sum = 0;
+
+        while(student) {
+            System.out.println("--------------------");
+            System.out.println("1.학생수 | 2.점수입력 | 3.점수리스트 | 4.분석 | 5.종료");
+            System.out.println("--------------------");
+            System.out.println("선택>");
+
+            String strNum = s.nextLine();
+
+            if(strNum.equals("1")) {
+                count++;
+                System.out.println("학생수>" + count);
+            }
+            else if (strNum.equals("2")) {
+                System.out.println("선택> 2");
+                int i = 0;
+                while (i < scores.length) {
+                    System.out.print("scores[" + i + "]> ");
+                    scores[i] = Integer.parseInt(s.nextLine());
+                    i++;
+                }
+            }
+            else if(strNum.equals("3")) {
+                System.out.println("잔고>" + count);
+            }
+            else if(strNum.equals("4")) {
+                for (int i = 0; i < scores.length; i++) {
+                    if (scores[i] > max) {
+                        max = scores[i];
+                    }
+                    sum += scores[i];
+                }
+
+                double avg = (double) sum / scores.length;
+            } else if (strNum.equals("5")) {
+                student = false;
+            }
+        }
+        System.out.println("프로그램 종료");
     }
 }

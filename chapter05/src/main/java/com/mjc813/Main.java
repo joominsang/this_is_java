@@ -85,11 +85,38 @@ public class Main {
 
         chapter05 c27 = new chapter05();
         c27.chp25();
-
-        chapter05 c28 = new chapter05();
-        c28.chp26();
+        double[] dArray = c27.chp25();
+        int[] nArray = c27.chp26(dArray);
+        c27.chp27(dArray, nArray);
 
         chapter05 c29 = new chapter05();
-        c29.chp27();
+        c29.chp29(7);
+
+        chapter05 c30 = new chapter05();
+        c30.chp30();
+
+        chapter05 c31 = new chapter05();
+        c31.chp31();
+
+        chapter05 c32 = new chapter05();
+        c32.chp32();
+
+        chapter05 c33 = new chapter05();
+        c33.chp33();
+
+        chapter05 c34 = new chapter05();
+        c34.chp34(args);
+
+        chapter05 c35 = new chapter05();
+        c35.chp35();
+
+        chapter05 c36 = new chapter05();
+        c36.chp36();
+
+        chapter05 c37 = new chapter05();
+        c37.chp37();
+
+        chapter05 c38 = new chapter05();
+        c38.chp38();
     }
 }

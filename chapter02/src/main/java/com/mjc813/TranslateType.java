@@ -68,5 +68,9 @@ public class TranslateType {
         System.out.println("str1: " + str1);
         System.out.println("str2: " + str2);
         System.out.println("str3: " + str3);
+
+        byte byteValue = 10;
+        float floatValue = 2.5F;
+        double doubleValue = 2.5;
     }
 }
