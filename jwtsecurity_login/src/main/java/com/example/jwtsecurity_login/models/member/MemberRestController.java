@@ -1,0 +1,52 @@
+package com.example.jwtsecurity_login.models.member;
+
+import com.example.jwtsecurity_login.common.ComResponseDto;
+import com.example.jwtsecurity_login.common.ResponseCode;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/rest/member")
+public class MemberRestController {
+	@Autowired
+	private MemberService memberService;
+
+	@PostMapping("")
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<ComResponseDto<MemberDto>> insert(@RequestBody MemberDto memberDto) {
+		MemberDto result = this.memberService.insert(memberDto, true);
+		return ResponseEntity.status(201).body(
+			ComResponseDto.make(ResponseCode.SUCCESS, result)
+		);
+	}
+
+	/*@PatchMapping("")
+	@PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+	public ResponseEntity<ComResponseDto<MemberDto>> update(@RequestBody MemberDto updateDto) {
+		MemberDto result = this.memberService.update(updateDto);
+		return ResponseEntity.status(200).body(
+				ComResponseDto.make(ResponseCode.SUCCESS, result)
+		);
+	}
+
+
+	@GetMapping("/all")
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<ComResponseDto<List<MemberDto>>> findAll(Model model) {
+		Object obj = model.getAttribute("signedMember");
+		if (obj instanceof IMember signedMember && !Role.ADMIN.toString().equals(signedMember.getRole()) ) {
+			return ResponseEntity.status(403).body(
+					ComResponseDto.make(ResponseCode.AUTHORIZATION_ERROR, null)
+			);
+		}
+		List<MemberDto> result = this.memberService.findAll();
+		return ResponseEntity.status(200).body(
+				ComResponseDto.make(ResponseCode.SUCCESS, result)
+		);
+	}*/
+}
